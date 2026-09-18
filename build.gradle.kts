@@ -1,8 +1,9 @@
-import org.gradle.kotlin.dsl.annotationProcessor
-
 group = "dev.artsman.poc"
 version = "0.0.1-SNAPSHOT"
 description = "PoC Gradle Project"
+
+val projectJdkFullVersion = file(".java-version").readText().trim()
+val projectJdkMajorVersion = projectJdkFullVersion.substringBefore('.').toInt()
 
 plugins {
 	java
@@ -23,6 +24,12 @@ dependencies {
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher:6.0.0")
 	testCompileOnly("org.junit.jupiter:junit-jupiter:6.0.0")
 	testRuntimeOnly("org.junit.jupiter:junit-jupiter:6.0.0")
+}
+
+java {
+	toolchain {
+		languageVersion.set(JavaLanguageVersion.of(projectJdkMajorVersion))
+	}
 }
 
 configurations {
