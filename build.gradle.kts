@@ -21,9 +21,8 @@ dependencies {
 	compileOnly("org.projectlombok:lombok:1.18.48")
 	implementation("org.mapstruct:mapstruct:1.6.3")
 
-	testRuntimeOnly("org.junit.platform:junit-platform-launcher:6.0.0")
-	testCompileOnly("org.junit.jupiter:junit-jupiter:6.0.0")
-	testRuntimeOnly("org.junit.jupiter:junit-jupiter:6.0.0")
+	testImplementation("org.junit.jupiter:junit-jupiter:6.1.3")
+	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
 java {
