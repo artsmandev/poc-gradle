@@ -14,11 +14,11 @@ repositories {
 }
 
 dependencies {
-	annotationProcessor("org.projectlombok:lombok:1.18.42")
+	annotationProcessor("org.projectlombok:lombok:1.18.48")
 	annotationProcessor("org.projectlombok:lombok-mapstruct-binding:0.2.0")
 	annotationProcessor("org.mapstruct:mapstruct-processor:1.6.3")
 
-	compileOnly("org.projectlombok:lombok:1.18.42")
+	compileOnly("org.projectlombok:lombok:1.18.48")
 	implementation("org.mapstruct:mapstruct:1.6.3")
 
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher:6.0.0")
