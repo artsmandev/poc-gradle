@@ -38,6 +38,15 @@ configurations {
 	}
 }
 
+tasks.withType<JavaCompile>().configureEach {
+	doFirst {
+		val selectedJdkVersion = javaCompiler.get().metadata.javaRuntimeVersion
+		if (selectedJdkVersion.substringBefore('+') != projectJdkFullVersion) {
+			throw GradleException("Java compilation requires JDK $projectJdkFullVersion, but the selected Java toolchain is JDK $selectedJdkVersion.")
+		}
+	}
+}
+
 tasks.test {
 	useJUnitPlatform()
 }
